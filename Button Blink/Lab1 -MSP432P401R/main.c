@@ -1,4 +1,4 @@
-#include "msp.h"
+#include <msp432.h>
 
 
 /**
@@ -6,5 +6,14 @@
  */
 void main(void)
 {
-	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;		// stop watchdog timer
+	P1DIR |= 0x01;
+	WDTCTL = WDTPW | WDTHOLD;
+	while (1)
+	{
+	    P1OUT ^= 0x01;
+	    __delay_cycles(250000);
+
+	}
+
+    	// stop watchdog timer
 }
