@@ -9,7 +9,7 @@ void main(void)
     PM5CTL0 &= ~LOCKLPM5;           // Disable the GPIO power-on default high-impedance mode
 
     P1DIR |= light1; // set LED as output
-    P2DIR |= light2; // set switch as input
+    P2DIR |= light2; // set switch as output
 
     unsigned int i;
 
